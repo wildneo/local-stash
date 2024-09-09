@@ -1,0 +1,38 @@
+{
+  "name": "@kingpin/react-local-stash",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Roman Oskolkov <wild_neo@mail.ru>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "@kingpin/local-stash": "workspace:*",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "peerDependencies": {
+    "@kingpin/local-stash": "workspace:*",
+    "react": "^18 || ^19"
+  }
+}

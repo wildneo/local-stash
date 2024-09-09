@@ -1,0 +1,27 @@
+{
+  "name": "@kingpin/emitter",
+  "version": "0.1.0",
+  "description": "Simple event emitter",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Roman Oskolkov <wild_neo@mail.ru>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "build"
+  ]
+}
