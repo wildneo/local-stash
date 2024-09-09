@@ -1,0 +1,1 @@
+This package provides a React hook for using the local-stash package in a React component.

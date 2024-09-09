@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "build": "pnpm -r run build"
+  },
   "devDependencies": {
     "typescript": "5.5.4"
   }

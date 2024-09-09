@@ -22,7 +22,7 @@
   },
   "sideEffects": false,
   "files": [
-    "build"
+    "dist"
   ],
   "devDependencies": {
     "@kingpin/local-stash": "workspace:*",

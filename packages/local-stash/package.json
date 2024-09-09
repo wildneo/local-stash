@@ -22,7 +22,7 @@
   },
   "sideEffects": false,
   "files": [
-    "build"
+    "dist"
   ],
   "dependencies": {
     "@kingpin/emitter": "workspace:*"
