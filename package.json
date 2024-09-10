@@ -2,9 +2,13 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "pnpm -r run build"
+    "build": "pnpm -r run build",
+    "changeset": "changeset",
+    "ci:version": "changeset version",
+    "ci:publish": "pnpm publish -r"
   },
   "devDependencies": {
-    "typescript": "5.5.4"
+    "@changesets/cli": "^2.27.8",
+    "typescript": "^5.5.4"
   }
 }

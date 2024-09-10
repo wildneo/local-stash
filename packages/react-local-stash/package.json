@@ -1,5 +1,5 @@
 {
-  "name": "@kingpin/react-local-stash",
+  "name": "@wildneo/react-local-stash",
   "version": "0.1.0",
   "description": "",
   "type": "module",
@@ -25,14 +25,14 @@
     "dist"
   ],
   "devDependencies": {
-    "@kingpin/local-stash": "workspace:*",
+    "@wildneo/local-stash": "workspace:*",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "peerDependencies": {
-    "@kingpin/local-stash": "workspace:*",
+    "@wildneo/local-stash": "workspace:*",
     "react": "^18 || ^19"
   }
 }

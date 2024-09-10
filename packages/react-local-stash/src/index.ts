@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import { Stash } from "@kingpin/local-stash";
+import { Stash } from "@wildneo/local-stash";
 
 /**
  * Creates a custom hook for managing local storage state with the provided Stash instance.

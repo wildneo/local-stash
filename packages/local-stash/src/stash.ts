@@ -1,4 +1,4 @@
-import { EventEmitter } from '@kingpin/emitter';
+import { EventEmitter } from '@wildneo/emitter';
 import type { Options, StashListener } from './types';
 import { resolveKey, deserialize, serialize, mergeScopes } from './utils';
 

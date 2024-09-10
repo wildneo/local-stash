@@ -1,5 +1,5 @@
 {
-  "name": "@kingpin/emitter",
+  "name": "@wildneo/emitter",
   "version": "0.1.0",
   "description": "Simple event emitter",
   "type": "module",
