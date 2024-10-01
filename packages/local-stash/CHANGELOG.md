@@ -1,5 +1,11 @@
 # @wildneo/local-stash
 
+## 0.2.0
+
+### Minor Changes
+
+- c6c7410: Enhance Stash event handling
+
 ## 0.1.1
 
 ### Patch Changes
