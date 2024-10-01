@@ -41,9 +41,13 @@ export type SelectFunction<TData = unknown> = (
  */
 export type PrepareFunction<TData = unknown> = (value: TData) => any;
 
-export type Listener = (...args: any[]) => void;
+export type StashListener<TData> = (event: StorageEvent<TData>) => void;
 
-export type StashListener<TData> = (value: TData) => void;
+export type StorageEvent<TData> = {
+  key: string | null;
+  newValue: TData | null;
+  oldValue: TData | null;
+};
 
 export type StashValue = {
   version?: number | string;

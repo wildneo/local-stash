@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import { Stash } from "@wildneo/local-stash";
+import { Stash, type StashListener } from "@wildneo/local-stash";
 
 /**
  * Creates a custom hook for managing local storage state with the provided Stash instance.
@@ -11,7 +11,7 @@ import { Stash } from "@wildneo/local-stash";
  */
 export function createLocalStashHook<TData = unknown>(stash: Stash<TData>) {
   const useLocalStash = (key: string, initialValue: TData) => {
-    const [storedValue, setStoredValue] = useState<TData>(() => {
+    const [storedValue, setStoredValue] = useState<TData | null>(() => {
       try {
         const storedValue = stash.getItem(key);
 
@@ -24,22 +24,31 @@ export function createLocalStashHook<TData = unknown>(stash: Stash<TData>) {
     });
 
     useEffect(() => {
-      const handler = (value: TData) => setStoredValue(value);
+      const listener: StashListener<TData> = (event) => {
+        if (event.key !== key) return;
 
-      stash.on("storage", handler);
+        setStoredValue(event.newValue);
+      };
+
+      stash.on("storage", listener);
 
       return () => {
-        stash.off("storage", handler);
+        stash.off("storage", listener);
       };
     }, []);
 
-    const setValue: Dispatch<SetStateAction<TData>> = useCallback(
+    const setValue: Dispatch<SetStateAction<TData | null>> = useCallback(
       (value) => {
         try {
           const valueToStore =
             value instanceof Function ? value(storedValue) : value;
 
-          stash.setItem(key, valueToStore);
+          if (valueToStore !== null) {
+            stash.setItem(key, valueToStore);
+          } else {
+            stash.removeItem(key);
+          }
+
         } catch (error) {
           console.error(error);
         }
