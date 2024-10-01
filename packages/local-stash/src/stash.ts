@@ -1,5 +1,5 @@
 import { EventEmitter } from '@wildneo/emitter';
-import type { Options, StashListener } from './types';
+import type { Options, StashListener, StorageEvent } from './types';
 import { resolveKey, deserialize, serialize, mergeScopes } from './utils';
 
 /**
@@ -47,9 +47,15 @@ export class Stash<TData = unknown> {
       version: this.#options.version,
     });
 
+    const event: StorageEvent<TData> = {
+      oldValue: this.getItem(key),
+      newValue: value,
+      key,
+    }
+
     this.#options.storage.setItem(resolveKey(key, this.#options.scope), item);
 
-    this.#emitter.emit('storage', value);
+    this.#emitter.emit('storage', event);
   }
 
   /**
@@ -58,7 +64,15 @@ export class Stash<TData = unknown> {
    * @param key - The key of the item to be removed.
    */
   removeItem(key: string): void {
-    return this.#options.storage.removeItem(resolveKey(key, this.#options.scope));
+    const event: StorageEvent<TData> = {
+      oldValue: this.getItem(key),
+      newValue: null,
+      key,
+    }
+
+    this.#options.storage.removeItem(resolveKey(key, this.#options.scope));
+
+    this.#emitter.emit('storage', event);
   }
 
   /**
