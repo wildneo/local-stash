@@ -1,5 +1,11 @@
 # @wildneo/emitter
 
+## 0.1.3
+
+### Patch Changes
+
+- 8accbcc: Add "main" field to package.json files and update tsconfig module resolution
+
 ## 0.1.2
 
 ### Patch Changes

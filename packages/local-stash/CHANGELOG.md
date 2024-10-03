@@ -1,5 +1,13 @@
 # @wildneo/local-stash
 
+## 0.2.2
+
+### Patch Changes
+
+- 8accbcc: Add "main" field to package.json files and update tsconfig module resolution
+- Updated dependencies [8accbcc]
+  - @wildneo/emitter@0.1.3
+
 ## 0.2.1
 
 ### Patch Changes
