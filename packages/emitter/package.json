@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "description": "Simple event emitter",
   "type": "module",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
