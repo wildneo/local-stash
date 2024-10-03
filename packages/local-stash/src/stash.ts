@@ -1,6 +1,6 @@
 import { EventEmitter } from '@wildneo/emitter';
-import type { Options, StashListener, StorageEvent } from './types';
-import { resolveKey, deserialize, serialize, mergeScopes } from './utils';
+import type { Options, StashListener, StorageEvent } from './types.js';
+import { resolveKey, deserialize, serialize, mergeScopes } from './utils.js';
 
 /**
  * Represents a Stash that allows storing and managing data.

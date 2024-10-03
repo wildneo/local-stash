@@ -3,7 +3,6 @@
   "version": "0.2.2",
   "description": "",
   "type": "module",
-  "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

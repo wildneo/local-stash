@@ -1,4 +1,4 @@
-import { Listener } from "./types";
+import { Listener } from "./types.js";
 
 /**
  * Class representing an event emitter.

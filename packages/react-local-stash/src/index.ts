@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import { Stash, type StashListener } from "@wildneo/local-stash";
-import { resolveValue } from "./utils";
+import { resolveValue } from "./utils.js";
 
 /**
  * Creates a custom hook for managing local storage state with the provided Stash instance.

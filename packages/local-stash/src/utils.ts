@@ -1,4 +1,4 @@
-import type { StashValue } from './types';
+import type { StashValue } from './types.js';
 
 export function isStashValue(value: unknown): value is StashValue {
   return value !== null && typeof value === 'object' && 'data' in value;

@@ -1,5 +1,5 @@
-import { Stash } from "./stash";
-import type { Options } from "./types";
+import { Stash } from "./stash.js";
+import type { Options } from "./types.js";
 
 export type { 
   Options,
@@ -8,8 +8,8 @@ export type {
   StashListener,
   StorageEvent,
   StashValue,
-} from "./types";
-export { Stash } from "./stash";
+} from "./types.js";
+export { Stash } from "./stash.js";
 
 /**
  * Creates a stash with the provided options.
