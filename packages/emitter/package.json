@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/emitter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Simple event emitter",
   "type": "module",
   "module": "dist/index.js",

@@ -1,5 +1,13 @@
 # @wildneo/react-local-stash
 
+## 0.2.3
+
+### Patch Changes
+
+- 79469e3: Update imports to include file extensions and adjust module resolution in tsconfig.json
+- Updated dependencies [79469e3]
+  - @wildneo/local-stash@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
