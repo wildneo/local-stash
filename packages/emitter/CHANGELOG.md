@@ -1,5 +1,11 @@
 # @wildneo/emitter
 
+## 0.1.4
+
+### Patch Changes
+
+- 79469e3: Update imports to include file extensions and adjust module resolution in tsconfig.json
+
 ## 0.1.3
 
 ### Patch Changes
