@@ -1,5 +1,11 @@
 # @wildneo/local-stash
 
+## 0.3.0
+
+### Minor Changes
+
+- 7067ed6: Add createFakeStorage utility
+
 ## 0.2.3
 
 ### Patch Changes
