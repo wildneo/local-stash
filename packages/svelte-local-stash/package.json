@@ -1,0 +1,36 @@
+{
+  "name": "@wildneo/svelte-local-stash",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm clean && tsc",
+    "clean": "rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "Roman Oskolkov <wild_neo@mail.ru>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@wildneo/local-stash": "workspace:*",
+    "svelte": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@wildneo/local-stash": "workspace:*",
+    "svelte": "^4 || ^5"
+  }
+}
