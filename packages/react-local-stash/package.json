@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/react-local-stash",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "module": "dist/index.js",
