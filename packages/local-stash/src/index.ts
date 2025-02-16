@@ -1,7 +1,7 @@
 import { Stash } from "./stash.js";
 import type { Options } from "./types.js";
 
-export type { 
+export type {
   Options,
   PrepareFunction,
   SelectFunction,
@@ -10,6 +10,7 @@ export type {
   StashValue,
 } from "./types.js";
 export { Stash } from "./stash.js";
+export { createFakeStorage } from "./fake.js";
 
 /**
  * Creates a stash with the provided options.
