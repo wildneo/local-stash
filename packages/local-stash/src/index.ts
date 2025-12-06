@@ -1,24 +1,40 @@
-import { Stash } from "./stash.js";
-import type { Options } from "./types.js";
+import { StashItem } from './item.js';
+import { Stash } from './stash.js';
+import type { StashItemOptions, StashOptions } from './types.js';
 
+export { createFakeStorage } from './fake.js';
+export { StashItem } from './item.js';
+export { Stash } from './stash.js';
 export type {
-  Options,
   PrepareFunction,
   SelectFunction,
+  StashItemOptions,
   StashListener,
-  StorageEvent,
+  StashOptions,
   StashValue,
-} from "./types.js";
-export { Stash } from "./stash.js";
-export { createFakeStorage } from "./fake.js";
+  StorageEvent,
+} from './types.js';
 
 /**
  * Creates a stash with the provided options.
  *
- * @template TData - The type of data stored in the stash.
  * @param options - The options for configuring the stash.
  * @returns A new stash instance initialized with the provided options.
+ *
+ * @template TData - The type of data stored in the stash.
  */
-export function createLocalStash<TData = unknown>(options: Options<TData>) {
-  return new Stash<TData>(options);
+export function createStash(options: StashOptions) {
+  return new Stash(options);
+}
+
+/**
+ * Creates a stash item with the provided options.
+ *
+ * @param options - The options for configuring the stash item.
+ * @returns A new stash item instance initialized with the provided options.
+ *
+ * @template TData - The type of data stored in the stash item.
+ */
+export function createItem<TData = unknown>(options: StashItemOptions<TData>) {
+  return new StashItem<TData>(options);
 }

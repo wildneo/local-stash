@@ -1,18 +1,19 @@
 {
-  "name": "root",
+  "name": "local-stash",
   "private": true,
   "scripts": {
-    "build": "pnpm -r run clean && pnpm -r run build",
-    "changeset": "changeset",
-    "test": "vitest",
-    "ci:test": "vitest run",
+    "ci:build": "pnpm -r run build",
     "ci:version": "changeset version",
-    "ci:publish": "pnpm publish -r"
+    "ci:publish": "changeset publish",
+    "ci:test": "vitest run",
+    "test": "vitest",
+    "cs": "changeset"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.8",
     "@changesets/cli": "^2.27.8",
+    "publint": "^0.3.15",
     "typescript": "^5.5.4",
-    "vite": "^5.4.4",
-    "vitest": "^2.0.5"
+    "vitest": "^4.0.15"
   }
 }

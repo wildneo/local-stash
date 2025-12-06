@@ -7,7 +7,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "pnpm clean && tsc",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "prepare": "pnpm build",
+    "prepack": "publint"
   },
   "keywords": [],
   "author": "Roman Oskolkov <wild_neo@mail.ru>",
@@ -26,9 +28,10 @@
     "dist"
   ],
   "devDependencies": {
-    "@wildneo/local-stash": "workspace:*",
+    "@testing-library/react": "^16.3.0",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
+    "@wildneo/local-stash": "workspace:*",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
