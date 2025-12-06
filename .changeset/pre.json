@@ -8,7 +8,7 @@
     "@wildneo/svelte-local-stash": "0.1.0"
   },
   "changesets": [
-    "old-carrots-thank",
-    "beige-cooks-trade"
+    "beige-cooks-trade",
+    "old-carrots-thank"
   ]
 }
