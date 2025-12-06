@@ -1,63 +1,52 @@
-import { useCallback, useEffect, useState } from "react";
-import type { Dispatch, SetStateAction } from "react";
-import { Stash, type StashListener } from "@wildneo/local-stash";
-import { resolveValue } from "./utils.js";
+import type { StashItem } from '@wildneo/local-stash';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
+import { resolveValue } from './utils.js';
 
 /**
- * Creates a custom hook for managing local storage state with the provided Stash instance.
+ * Creates a custom hook for managing local storage state with the provided StashItem instance.
  *
  * @template TData - The type of data stored in the Stash instance.
- * @param stash - The Stash instance used for storing data.
+ * @param item - The StashItem instance used for storing data.
  * @returns A hook that provides access to the stored value and a function to update it.
  */
-export function createLocalStashHook<TData = unknown>(stash: Stash<TData>) {
-  const useLocalStash = (key: string, initialValue: TData | (() => TData)) => {
+export function createHook<TData = unknown>(item: StashItem<TData>) {
+  const useStashItem = () => {
     const [storedValue, setStoredValue] = useState<TData | null>(() => {
       try {
-        const storedValue = stash.getItem(key);
-
-        return storedValue === null ? resolveValue(initialValue) : storedValue;
+        return item.getItem();
       } catch (error) {
         console.error(error);
-
-        return resolveValue(initialValue);
+        return null;
       }
     });
 
-    useEffect(() => {
-      const listener: StashListener<TData> = (event) => {
-        if (event.key !== key) return;
-
+    useLayoutEffect(() => {
+      // Подписка вызывается ТОЛЬКО когда данные реально изменились
+      return item.subscribe((event) => {
+        // Просто кладём новое значение, без сравнений
         setStoredValue(event.newValue);
-      };
-
-      stash.on("storage", listener);
-
-      return () => {
-        stash.off("storage", listener);
-      };
-    }, []);
+      });
+    }, [item]);
 
     const setValue: Dispatch<SetStateAction<TData | null>> = useCallback(
       (value) => {
         try {
-          const valueToStore = resolveValue(value, storedValue);
-
-          if (valueToStore !== null) {
-            stash.setItem(key, valueToStore);
+          const newValue = resolveValue(value, item.getItem());
+          if (newValue !== null) {
+            item.setItem(newValue);
           } else {
-            stash.removeItem(key);
+            item.removeItem();
           }
-
         } catch (error) {
           console.error(error);
         }
       },
-      [key, storedValue]
+      [item],
     );
 
     return [storedValue, setValue] as const;
   };
 
-  return useLocalStash;
+  return useStashItem;
 }

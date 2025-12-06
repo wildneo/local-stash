@@ -1,4 +1,6 @@
-import { Listener } from "./types.js";
+/** biome-ignore-all lint/suspicious/noExplicitAny: any is used to maximize compatibility with different types */
+
+import type { Listener } from './types.js';
 
 /**
  * Class representing an event emitter.
@@ -16,15 +18,16 @@ export class EventEmitter {
     if (!this.#events.has(event)) {
       this.#events.set(event, []);
     }
-    this.#events.get(event)!.push(listener);
+
+    this.#events.get(event)?.push(listener);
   }
 
   off(event: string, listenerToRemove: Listener): void {
     if (!this.#events.has(event)) return;
 
-    const listeners = this.#events.get(event)!;
+    const listeners = this.#events.get(event) ?? [];
     const filteredListeners = listeners.filter(
-      (listener) => listener !== listenerToRemove
+      (listener) => listener !== listenerToRemove,
     );
 
     if (filteredListeners.length > 0) {
