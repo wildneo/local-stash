@@ -1,5 +1,18 @@
 # @wildneo/emitter
 
+## 1.0.0-next.0
+
+### Major Changes
+
+- ea17a08: feat!: 1.0.0 release with StashItem architecture
+
+  - Add StashItem class with versioning and data transformation
+  - Add createHook() for React integration
+  - Add createStore() for Svelte integration
+  - Add unit tests for all packages
+
+  BREAKING CHANGE: New StashItem-based API replaces previous implementation
+
 ## 0.1.4
 
 ### Patch Changes
