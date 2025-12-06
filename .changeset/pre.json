@@ -1,0 +1,14 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@wildneo/emitter": "0.1.4",
+    "@wildneo/local-stash": "0.3.0",
+    "@wildneo/react-local-stash": "0.3.0",
+    "@wildneo/svelte-local-stash": "0.1.0"
+  },
+  "changesets": [
+    "old-carrots-thank",
+    "beige-cooks-trade"
+  ]
+}
