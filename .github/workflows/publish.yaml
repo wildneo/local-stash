@@ -27,7 +27,7 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: build packages
-        run: pnpm build
+        run: pnpm ci:build
       - name: run test
         run: pnpm ci:test
       - name: create and publish versions
