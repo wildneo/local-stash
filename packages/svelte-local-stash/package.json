@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/svelte-local-stash",
-  "version": "1.0.0-next.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "module": "dist/index.js",
