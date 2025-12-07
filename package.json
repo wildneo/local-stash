@@ -4,7 +4,7 @@
   "scripts": {
     "ci:build": "pnpm -r run build",
     "ci:version": "changeset version",
-    "ci:publish": "changeset publish",
+    "ci:publish": "pnpm publish -r",
     "ci:test": "vitest run",
     "test": "vitest",
     "cs": "changeset"
