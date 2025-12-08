@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/svelte-local-stash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Svelte writable store for type-safe storage sync",
   "type": "module",
   "module": "dist/index.js",
