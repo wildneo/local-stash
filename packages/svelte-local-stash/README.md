@@ -1,6 +1,6 @@
 # @wildneo/svelte-local-stash
 
-Svelte store adapter for [@wildneo/local-stash](../local-stash).
+Svelte store adapter for [@wildneo/local-stash](../@wildneo/local-stash).
 
 ## Installation
 
@@ -102,6 +102,39 @@ Set value to `null` to remove the item from storage:
   Clear Settings
 </button>
 ```
+
+## Runtime Validation with Zod
+
+Use the `select` option with [zod](https://github.com/colinhacks/zod) for runtime type safety:
+
+```typescript
+// stores.ts
+import { z } from 'zod';
+import { createStash, createItem } from '@wildneo/local-stash';
+import { createStore } from '@wildneo/svelte-local-stash';
+
+const UserSettingsSchema = z.object({
+  theme: z.enum(['light', 'dark']),
+  fontSize: z.number().min(10).max(24),
+});
+
+type UserSettings = z.infer<typeof UserSettingsSchema>;
+
+const stash = createStash({ storage: localStorage });
+
+const settingsItem = createItem<UserSettings>({
+  stash,
+  key: 'user-settings',
+  select: (data) => {
+    const result = UserSettingsSchema.safeParse(data);
+    return result.success ? result.data : { theme: 'light', fontSize: 14 };
+  },
+});
+
+export const settings = createStore(settingsItem);
+```
+
+Now the store always contains validated data or a safe default value.
 
 ## API
 

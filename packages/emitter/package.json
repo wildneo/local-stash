@@ -1,7 +1,7 @@
 {
   "name": "@wildneo/emitter",
   "version": "1.0.0",
-  "description": "Simple event emitter",
+  "description": "Minimal typed event emitter for TypeScript - zero dependencies",
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,30 @@
     "prepare": "pnpm build",
     "prepack": "publint"
   },
-  "keywords": [],
+  "keywords": [
+    "emitter",
+    "event-emitter",
+    "events",
+    "eventemitter",
+    "pubsub",
+    "typescript",
+    "typed",
+    "minimal"
+  ],
   "author": "Roman Oskolkov <wild_neo@mail.ru>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildneo/local-stash.git",
+    "directory": "packages/emitter"
+  },
+  "homepage": "https://github.com/wildneo/local-stash/tree/main/packages/emitter#readme",
+  "bugs": {
+    "url": "https://github.com/wildneo/local-stash/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": {

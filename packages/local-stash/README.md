@@ -204,6 +204,47 @@ const settingsItem = createItem<UserSettingsV2>({
 });
 ```
 
+## Runtime Validation with Zod
+
+Since TypeScript types are erased at runtime, data from localStorage may not match your expected types. Use the `select` option with a validation library like [zod](https://github.com/colinhacks/zod) for runtime type safety:
+
+```typescript
+import { z } from 'zod';
+import { createStash, createItem } from '@wildneo/local-stash';
+
+// Define a schema
+const UserSettingsSchema = z.object({
+  theme: z.enum(['light', 'dark']),
+  fontSize: z.number().min(10).max(24),
+});
+
+type UserSettings = z.infer<typeof UserSettingsSchema>;
+
+const stash = createStash({ storage: localStorage });
+
+const settingsItem = createItem<UserSettings>({
+  stash,
+  key: 'user-settings',
+  select: (data) => {
+    const result = UserSettingsSchema.safeParse(data);
+    if (result.success) {
+      return result.data;
+    }
+    // Return default value if validation fails
+    return { theme: 'light', fontSize: 14 };
+  },
+});
+
+// Now getItem() always returns valid UserSettings or default
+const settings = settingsItem.getItem();
+```
+
+This approach protects against:
+- Corrupted data in storage
+- Data modified via browser DevTools
+- Schema changes between app versions
+- Data from other applications (key collisions)
+
 ## Fake Storage
 
 The `createFakeStorage()` utility creates an in-memory Storage implementation.
