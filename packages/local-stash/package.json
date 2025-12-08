@@ -1,7 +1,7 @@
 {
   "name": "@wildneo/local-stash",
   "version": "1.0.0",
-  "description": "",
+  "description": "Type-safe localStorage wrapper for TypeScript with versioning, data migration, and change subscriptions",
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,31 @@
     "prepare": "pnpm build",
     "prepack": "publint"
   },
-  "keywords": [],
+  "keywords": [
+    "localstorage",
+    "sessionstorage",
+    "storage",
+    "typescript",
+    "type-safe",
+    "typed-storage",
+    "persist",
+    "versioning",
+    "migration"
+  ],
   "author": "Roman Oskolkov <wild_neo@mail.ru>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildneo/local-stash.git",
+    "directory": "packages/local-stash"
+  },
+  "homepage": "https://github.com/wildneo/local-stash/tree/main/packages/local-stash#readme",
+  "bugs": {
+    "url": "https://github.com/wildneo/local-stash/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": {

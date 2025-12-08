@@ -1,6 +1,6 @@
 # @wildneo/react-local-stash
 
-React hook adapter for [@wildneo/local-stash](../local-stash).
+React hook adapter for [@wildneo/local-stash](../@wildneo/local-stash).
 
 ## Installation
 
@@ -125,6 +125,38 @@ Creates a React hook for the given StashItem.
 A hook function that returns `[value, setValue]` tuple:
 - `value: TData | null` - Current stored value or null
 - `setValue: Dispatch<SetStateAction<TData | null>>` - Setter function
+
+## Runtime Validation with Zod
+
+Use the `select` option with [zod](https://github.com/colinhacks/zod) for runtime type safety:
+
+```typescript
+import { z } from 'zod';
+import { createStash, createItem } from '@wildneo/local-stash';
+import { createHook } from '@wildneo/react-local-stash';
+
+const UserSettingsSchema = z.object({
+  theme: z.enum(['light', 'dark']),
+  fontSize: z.number().min(10).max(24),
+});
+
+type UserSettings = z.infer<typeof UserSettingsSchema>;
+
+const stash = createStash({ storage: localStorage });
+
+const settingsItem = createItem<UserSettings>({
+  stash,
+  key: 'user-settings',
+  select: (data) => {
+    const result = UserSettingsSchema.safeParse(data);
+    return result.success ? result.data : { theme: 'light', fontSize: 14 };
+  },
+});
+
+export const useSettings = createHook(settingsItem);
+```
+
+Now the hook always returns validated data or a safe default value.
 
 ## Automatic Sync
 

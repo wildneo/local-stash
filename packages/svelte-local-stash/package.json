@@ -1,7 +1,7 @@
 {
   "name": "@wildneo/svelte-local-stash",
   "version": "1.0.0",
-  "description": "",
+  "description": "Svelte writable store for type-safe storage sync",
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,32 @@
     "prepare": "pnpm build",
     "prepack": "publint"
   },
-  "keywords": [],
+  "keywords": [
+    "svelte",
+    "store",
+    "writable",
+    "localstorage",
+    "svelte-store",
+    "persist",
+    "storage",
+    "typescript",
+    "type-safe",
+    "reactive"
+  ],
   "author": "Roman Oskolkov <wild_neo@mail.ru>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildneo/local-stash.git",
+    "directory": "packages/svelte-local-stash"
+  },
+  "homepage": "https://github.com/wildneo/local-stash/tree/main/packages/svelte-local-stash#readme",
+  "bugs": {
+    "url": "https://github.com/wildneo/local-stash/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": {
@@ -22,9 +45,6 @@
       }
     },
     "./package.json": "./package.json"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "sideEffects": false,
   "files": [

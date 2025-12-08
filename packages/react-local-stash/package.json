@@ -1,7 +1,7 @@
 {
   "name": "@wildneo/react-local-stash",
   "version": "1.0.1",
-  "description": "",
+  "description": "React hooks for type-safe storage sync",
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,9 +11,33 @@
     "prepare": "pnpm build",
     "prepack": "publint"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "hooks",
+    "localstorage",
+    "use-localstorage",
+    "uselocalstorage",
+    "react-hooks",
+    "state",
+    "persist",
+    "storage",
+    "typescript",
+    "type-safe"
+  ],
   "author": "Roman Oskolkov <wild_neo@mail.ru>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildneo/local-stash.git",
+    "directory": "packages/react-local-stash"
+  },
+  "homepage": "https://github.com/wildneo/local-stash/tree/main/packages/react-local-stash#readme",
+  "bugs": {
+    "url": "https://github.com/wildneo/local-stash/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": {
