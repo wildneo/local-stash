@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/react-local-stash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hooks for type-safe storage sync",
   "type": "module",
   "module": "dist/index.js",

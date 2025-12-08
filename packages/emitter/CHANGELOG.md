@@ -1,5 +1,13 @@
 # @wildneo/emitter
 
+## 1.0.1
+
+### Patch Changes
+
+- d5e125b: chore:enhance package.json for @wildneo/emitter
+
+  - Updated package.json with a detailed description, keywords, repository info, homepage, and bugs URL.
+
 ## 1.0.0
 
 ### Major Changes
