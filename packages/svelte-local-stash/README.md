@@ -1,6 +1,6 @@
 # @wildneo/svelte-local-stash
 
-Svelte store adapter for [@wildneo/local-stash](../@wildneo/local-stash).
+Svelte store adapter for [@wildneo/local-stash](https://www.npmjs.com/package/@wildneo/local-stash).
 
 ## Installation
 

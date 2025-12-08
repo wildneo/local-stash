@@ -1,6 +1,6 @@
 # @wildneo/react-local-stash
 
-React hook adapter for [@wildneo/local-stash](../@wildneo/local-stash).
+React hook adapter for [@wildneo/local-stash](https://www.npmjs.com/package/@wildneo/local-stash).
 
 ## Installation
 
