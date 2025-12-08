@@ -1,5 +1,11 @@
 # @wildneo/react-local-stash
 
+## 1.0.3
+
+### Patch Changes
+
+- 356501b: docs: update README links for local-stash packages to point to npm
+
 ## 1.0.2
 
 ### Patch Changes
