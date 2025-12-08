@@ -1,6 +1,6 @@
 {
   "name": "@wildneo/local-stash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type-safe localStorage wrapper for TypeScript with versioning, data migration, and change subscriptions",
   "type": "module",
   "module": "dist/index.js",

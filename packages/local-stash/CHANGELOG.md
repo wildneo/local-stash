@@ -1,5 +1,17 @@
 # @wildneo/local-stash
 
+## 1.0.1
+
+### Patch Changes
+
+- d5e125b: chore: enhance package.json and README
+
+  - Updated package.json with a detailed description, keywords, repository info, homepage, and bugs URL.
+  - Added runtime validation example using Zod in README to improve type safety and data integrity.
+
+- Updated dependencies [d5e125b]
+  - @wildneo/emitter@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
