@@ -1,5 +1,11 @@
 # @wildneo/svelte-local-stash
 
+## 1.0.3
+
+### Patch Changes
+
+- 0e12c08: initialize store value in createStore function for svelte-local-stash
+
 ## 1.0.2
 
 ### Patch Changes
