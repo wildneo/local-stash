@@ -3,7 +3,7 @@ import { get, type Writable, writable } from 'svelte/store';
 
 /**
  * Creates a writable store tied to a StashItem instance.
- * 
+ *
  * The store listens for storage events to automatically update its value, and any
  * changes made through the store will be persisted using the StashItem instance.
  *
@@ -15,6 +15,8 @@ export function createStore<TData = unknown>(
   item: StashItem<TData>,
 ): Writable<TData | null> {
   const store = writable<TData | null>(item.getItem(), (set) => {
+    set(item.getItem());
+
     return item.subscribe((event) => set(event.newValue));
   });
 
